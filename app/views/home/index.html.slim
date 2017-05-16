@@ -1,0 +1,29 @@
+.starter-template
+  h1 Treetop demo use
+  .row
+    .col-md-8.col-md-offset-2
+      = form_tag root_path do |f|
+        .form-group
+          = text_area_tag :data, 'Where we go from now ? To 42', class: 'form-control'
+        .form-group
+          = button_tag 'Transform', class: 'btn btn-default'
+
+  .row
+    .col-md-8.col-md-offset-2
+    - if @convert
+      .panel.panel-default
+        .panel-body
+          == @convert
+
+  .row
+    .col-md-8.col-md-offset-2
+    - if @convert
+      .panel.panel-default
+        .panel-body
+          pre
+            code
+              = @convert
+  
+
+
+

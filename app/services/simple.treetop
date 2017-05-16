@@ -1,0 +1,26 @@
+grammar Simple
+  rule document
+    (line line_break?)+ <Document>
+  end
+
+  rule line
+    (text / number / space)+ <LineLiteral>
+  end
+
+  rule text
+    ([A-Za-z?!.,])+ <TextLiteral>
+  end
+
+  rule number
+    ([0-9])+ <NumberLiteral>
+  end
+
+  rule line_break
+    ([\r\n])+
+  end
+
+  rule space
+    ([ ])+
+  end
+end
+
